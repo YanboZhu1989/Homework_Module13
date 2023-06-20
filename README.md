@@ -12,4 +12,8 @@ You need to have installed:
 - Keras
 
 ## Usage
- __Data Preparation:__ The 'applicants_data.csv' file is read into a Pandas DataFrame. Categorical variables are identified for encoding and potential features and target variables are identified. Irrelevant columns such as "EIN" and "NAME" are dropped. The categorical variables are then OneHotEncoded and
+ __Data Preparation:__ The 'applicants_data.csv' file is read into a Pandas DataFrame. Identify the categorical variables and the data is then split into features (X) and target (y) datasets, where "IS_SUCCESSFUL" defines the target dataset. The data is then split into training and testing datasets and scaled using StandardScaler.
+ 
+__Neural Network Model:__ Creation & Evaluation: A binary classification deep neural network model is created using TensorFlow's Keras. The model is then compiled and fit using the binary_crossentropy loss function, the adam optimizer, and accuracy as the evaluation metric. The model is then evaluated to calculate its loss and accuracy. The model is saved and exported as an HDF5 file, 'AlphabetSoup.h5'.
+
+__Model Optimization:__ 2 more attempts are made to optimize the model using various techniques such as reducing and adding more neurons to a hidden layer, adding more hidden layers and adjusting the number of epochs in the training regimen. The accuracy scores of each model are displayed and compared. Each model is saved as an HDF5 file.
